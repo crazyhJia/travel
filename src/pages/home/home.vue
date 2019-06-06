@@ -1,5 +1,7 @@
 <template>
-    <div>黄佳</div>
+    <div>
+      <home-header></home-header>
+    </div>
 </template>
 
 <script>
@@ -9,8 +11,12 @@
      *@Copyright 天源迪科信息技术股份有限公司
      *@Description
      */
+    import HomeHeader from './components/header'
     export default {
-        name: "home"
+      name: "home",
+      components: {
+        HomeHeader
+      }
     }
 </script>
 
