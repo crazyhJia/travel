@@ -35,7 +35,7 @@
               },
               {
                 id:'02',
-                imgUrl: 'https://h-des-activity-fecp.qunarzz.com/h_des_activity_fe_h_des_activity_fe/161bfb308c31ac5e61afca9b026e7cf4.jpg'
+                imgUrl: 'https://h-des-activity-fecp.qunarzz.com/h_des_activity_fe_h_des_activity_fe/8b75ece9943e703fc1b78f2d02a71bae.jpg'
               },
             ]
           }

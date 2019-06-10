@@ -100,22 +100,24 @@
   height: 0
   margin:0px;
   padding-bottom: 25%;
-.icon
-  /*position : relative*/
-  /*float: left*/
-  display inline-block
-  height: 0
-  width: 25%
-  img
-    width: 80px;
-    height: 60px;
-    padding: 5px 10px
-    border-radius : 20px
-  p
-    text-align : center
-    overflow :hidden
-    white-space : nowrap
-    text-overflow: ellipsis
+.icons
+  margin-top: .4rem
+  .icon
+    position : relative
+    /*float: left*/
+    display inline-block
+    height: 0
+    width: 25%
+    img
+      width: 80px;
+      height: 60px;
+      padding: 5px 10px
+      border-radius : 20px
+    p
+      text-align : center
+      overflow :hidden
+      white-space : nowrap
+      text-overflow: ellipsis
 
   //ellipsis()
 </style>
