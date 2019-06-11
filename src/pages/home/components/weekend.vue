@@ -26,34 +26,37 @@
      */
     export default {
         name: "home-weekend",
+      props:{
+        weekendList:{}
+      },
       data () {
         return {
-          weekendList: [
-            {
-              id: '0001',
-              imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
-              title: '初夏不眠夜',
-              desc: '夜游巴塞罗那，邂逅艺术之城'
-            },
-            {
-              id: '0002',
-              imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
-              title: '初夏不眠夜',
-              desc: '夜游巴塞罗那，邂逅艺术之城'
-            },
-            {
-              id: '0003',
-              imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
-              title: '初夏不眠夜',
-              desc: '夜游巴塞罗那，邂逅艺术之城'
-            },
-            {
-              id: '0004',
-              imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
-              title: '初夏不眠夜',
-              desc: '夜游巴塞罗那，邂逅艺术之城'
-            }
-          ]
+          // weekendList: [
+          //   {
+          //     id: '0001',
+          //     imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
+          //     title: '初夏不眠夜',
+          //     desc: '夜游巴塞罗那，邂逅艺术之城'
+          //   },
+          //   {
+          //     id: '0002',
+          //     imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
+          //     title: '初夏不眠夜',
+          //     desc: '夜游巴塞罗那，邂逅艺术之城'
+          //   },
+          //   {
+          //     id: '0003',
+          //     imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
+          //     title: '初夏不眠夜',
+          //     desc: '夜游巴塞罗那，邂逅艺术之城'
+          //   },
+          //   {
+          //     id: '0004',
+          //     imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
+          //     title: '初夏不眠夜',
+          //     desc: '夜游巴塞罗那，邂逅艺术之城'
+          //   }
+          // ]
 
         }
       }

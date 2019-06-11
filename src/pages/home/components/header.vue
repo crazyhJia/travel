@@ -50,5 +50,6 @@
       float: right
       text-align: center
       margin-left: .3rem
+      color:#fff
 
 </style>

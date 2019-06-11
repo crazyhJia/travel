@@ -22,60 +22,63 @@
      */
     export default {
         name: "home-icon",
+      props: {
+        iconList:{}
+      },
       data () {
           return {
-            iconList:[
-              {
-                id: '001',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-                desc: '景点1'
-              },
-              {
-                id: '002',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点2'
-              },
-              {
-                id: '003',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点3-dffgdsgsgsgsgdsgsg'
-              },
-              {
-                id: '004',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点4'
-              },
-              {
-                id: '005',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点5'
-              },
-              {
-                id: '006',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点6'
-              },
-              {
-                id: '007',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点7'
-              },
-              {
-                id: '008',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点8'
-              },
-              {
-                id: '009',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点9'
-              },
-              {
-                id: '010',
-                imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
-                desc: '景点10'
-              }
-              ]
+            // iconList:[
+            //   {
+            //     id: '001',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
+            //     desc: '景点1'
+            //   },
+            //   {
+            //     id: '002',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点2'
+            //   },
+            //   {
+            //     id: '003',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点3-dffgdsgsgsgsgdsgsg'
+            //   },
+            //   {
+            //     id: '004',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点4'
+            //   },
+            //   {
+            //     id: '005',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点5'
+            //   },
+            //   {
+            //     id: '006',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点6'
+            //   },
+            //   {
+            //     id: '007',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点7'
+            //   },
+            //   {
+            //     id: '008',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点8'
+            //   },
+            //   {
+            //     id: '009',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点9'
+            //   },
+            //   {
+            //     id: '010',
+            //     imgUrl: 'https://imgs.qunarzz.com/sight/p0/1504/59/594e60a1366e1741.water.jpg_256x160_28de21eb.jpg',
+            //     desc: '景点10'
+            //   }
+            //   ]
           }
       },
       computed: {

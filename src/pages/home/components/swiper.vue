@@ -23,7 +23,7 @@
     export default {
         name: "home-swiper",
       props:{
-        swiperList: []
+        swiperList: {}
       },
       data () {
           return {

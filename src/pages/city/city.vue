@@ -2,8 +2,8 @@
     <div class="city">
       <city-header></city-header>
       <city-search></city-search>
-      <city-list></city-list>
-      <city-alphabet></city-alphabet>
+      <city-list :city='city' :hotCities="hotCities" :allCities="allCities"></city-list>
+      <city-alphabet :allCities="allCities"></city-alphabet>
     </div>
 </template>
 
@@ -14,6 +14,7 @@
      *@Copyright 天源迪科信息技术股份有限公司
      *@Description
      */
+    import axios from 'axios'
     import CityHeader from './component/header'
     import CitySearch from './component/search'
     import CityList from './component/list'
@@ -25,11 +26,30 @@
         CitySearch,
         CityList,
         CityAlphabet
-    },
+      },
       data () {
           return {
-            city: '北京'
+            city: '',
+            hotCities: [],
+            allCities: {},
           }
+      },
+      methods: {
+        getCityInfo () {
+          axios.get('/api/city.json').then(this.getCityInfoSucc)
+        },
+        getCityInfoSucc (res) {
+          res = res.data
+          if(res.ret && res.data){
+            const data = res.data
+            this.city = data.city
+            this.hotCities = data.hotCity
+            this.allCities = data.allCities
+          }
+        }
+      },
+      mounted () {
+        this.getCityInfo()
       }
     }
 </script>

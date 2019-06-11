@@ -1,11 +1,7 @@
 <template>
     <div class="alphabet">
-      <ul class="list">
-        <li class="item">A</li>
-        <li class="item">B</li>
-        <li class="item">C</li>
-        <li class="item">D</li>
-        <li class="item">E</li>
+      <ul class="list" v-for="item,key in allCities" :key="key">
+        <li class="item">{{key}}</li>
       </ul>
     </div>
 </template>
@@ -18,7 +14,10 @@
      *@Description
      */
     export default {
-        name: "city-alphabet"
+        name: "city-alphabet",
+      props:{
+        allCities: Object
+      }
     }
 </script>
 
