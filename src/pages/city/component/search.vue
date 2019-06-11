@@ -25,7 +25,7 @@
       height: 1.2rem
       line-height :1.2rem
       width: 100%
-      text-align: ;left
+      text-align: center
       border-radius : 4px
       padding: 5px auto
       box-sizing: border-box
