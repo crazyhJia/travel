@@ -1,6 +1,7 @@
 <template>
     <div class="city">
       <city-header></city-header>
+      <city-search></city-search>
     </div>
 </template>
 
@@ -12,10 +13,12 @@
      *@Description
      */
     import CityHeader from './component/header'
+    import CitySearch from './component/search'
     export default {
       name: "city",
       components:{
         CityHeader,
+        CitySearch,
     },
       data () {
           return {
