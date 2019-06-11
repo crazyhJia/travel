@@ -1,9 +1,13 @@
 <template>
     <div class="city">
-      <city-header></city-header>
-      <city-search></city-search>
+      <div class="fixedTemplate">
+        <city-header></city-header>
+        <city-search></city-search>
+      </div>
       <city-list :city='city' :hotCities="hotCities" :allCities="allCities"></city-list>
-      <city-alphabet :allCities="allCities"></city-alphabet>
+      <div class="fixedTemplate">
+       <city-alphabet :allCities="allCities"></city-alphabet>
+      </div>
     </div>
 </template>
 
@@ -55,5 +59,8 @@
 </script>
 
 <style scoped lang="stylus">
-
+  .fixedTemplate
+    position fixed
+    width: 100%
+    z-index :1
 </style>

@@ -27,7 +27,7 @@
   flex-direction: column
   justify-content: center
   position: absolute
-  top: 55px
+  top: 155px
   right:0
   bottom:0
   width: 15px
