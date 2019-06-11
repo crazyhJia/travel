@@ -2,7 +2,9 @@
     <div class="header">
       <span class="header-left"><Icon type="ios-arrow-back" /></span>
       <span class="header-input"><Icon type="ios-search-outline" />输入城市/景点/游玩主题</span>
-      <span class="header-right">城市<Icon type="md-arrow-dropdown" /></span>
+      <router-link to='/city'>
+       <span class="header-right">{{this.city}}<Icon type="md-arrow-dropdown" /></span>
+      </router-link>
     </div>
 </template>
 
@@ -14,7 +16,10 @@
      *@Description
      */
     export default {
-        name: "home-header"
+        name: "home-header",
+        props: {
+          city: String
+        }
     }
 </script>
 
