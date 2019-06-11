@@ -21,6 +21,7 @@
     import HomeIcon from './components/icon'
     import HomeRecommand from './components/recommand'
     import HomeWeekend from './components/weekend'
+    import axios from 'axios'
     export default {
       name: "home",
       components: {
@@ -29,6 +30,17 @@
         HomeIcon,
         HomeRecommand,
         HomeWeekend
+      },
+      methods: {
+        getHomeInfo () {
+          axios.get('/api/index.json').then(this.getHomeInfoSucc)
+        },
+        getHomeInfoSucc (res) {
+          console.log(res)
+        }
+      },
+      mounted () {
+        this.getHomeInfo()
       }
     }
 </script>

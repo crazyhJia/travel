@@ -3,7 +3,7 @@
     <div class="title">
       周末去哪儿
     </div>
-    <ul v-for="item,index in recommandList" :key="item.id">
+    <ul v-for="item,index in weekendList" :key="item.id">
       <li class="item">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" />
@@ -28,7 +28,7 @@
         name: "home-weekend",
       data () {
         return {
-          recommandList: [
+          weekendList: [
             {
               id: '0001',
               imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
@@ -36,19 +36,19 @@
               desc: '夜游巴塞罗那，邂逅艺术之城'
             },
             {
-              id: '0001',
+              id: '0002',
               imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
               title: '初夏不眠夜',
               desc: '夜游巴塞罗那，邂逅艺术之城'
             },
             {
-              id: '0001',
+              id: '0003',
               imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
               title: '初夏不眠夜',
               desc: '夜游巴塞罗那，邂逅艺术之城'
             },
             {
-              id: '0001',
+              id: '0004',
               imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9114ed957e11683c9aeed0e23cef82cc.jpg',
               title: '初夏不眠夜',
               desc: '夜游巴塞罗那，邂逅艺术之城'
