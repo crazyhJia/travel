@@ -17,7 +17,9 @@
             </div>
           </div>
         </div>
-        <div class="area" v-for="city,key in allCities" :key="key">
+        <div class="area" v-for="city,key in allCities"
+             :key="key" :ref="key"
+        >
           <div class="title">{{key}}</div>
           <div class="item-list" v-for="item in city" :key="item.id" >
             <div class="item" >{{item.name}}</div>
@@ -34,22 +36,32 @@
      *@Copyright 天源迪科信息技术股份有限公司
      *@Description
      */
-    // import BScroll from 'better-scroll'
+    import BScroll from 'better-scroll';
+    import axios from 'axios'
     export default {
         name: "city-list",
-      // mounted () {
-      //     this.scroll = new Bscroll(this.$ref.wrapper)
-      // }
       props: {
         city: String,
         hotCities:Array,
-        allCities:Object
-
+        allCities:Object,
+        letter: String
       },
       data () {
           return {
 
           }
+      },
+      mounted () {
+        this.scroll = new BScroll(this.$refs.wrapper)
+      },
+      watch: {
+        letter () {
+          if (this.letter) {
+            const element = this.$refs[this.letter][0]
+            console.log(element);
+            this.scroll.scrollToElement(element)
+          }
+        }
       }
 
     }

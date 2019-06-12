@@ -4,9 +4,13 @@
         <city-header></city-header>
         <city-search></city-search>
       </div>
-      <city-list :city='city' :hotCities="hotCities" :allCities="allCities"></city-list>
+      <city-list :city='city' :hotCities="hotCities" :allCities="allCities"
+        :letter="letter"
+      ></city-list>
       <div class="fixedTemplate">
-       <city-alphabet :allCities="allCities"></city-alphabet>
+       <city-alphabet :allCities="allCities"
+        @handleLetterChange="handleChange"
+       ></city-alphabet>
       </div>
     </div>
 </template>
@@ -33,12 +37,16 @@
       },
       data () {
           return {
+            letter: '',
             city: '',
             hotCities: [],
             allCities: {},
           }
       },
       methods: {
+        handleChange (letter) {
+          this.letter = letter;
+        },
         getCityInfo () {
           axios.get('/api/city.json').then(this.getCityInfoSucc)
         },

@@ -52,8 +52,8 @@
   .swiper
     width: 100%
     overflow: hidden
-    height: 0
-    padding-bottom: 31.25%
+    /*height: 0*/
+    /*padding-bottom: 10px*/
     .swiper-img
       width:100%
 </style>

@@ -1,7 +1,14 @@
 <template>
     <div class="alphabet">
-      <ul class="list" v-for="item,key in allCities" :key="key">
-        <li class="item">{{key}}</li>
+      <ul class="list">
+        <li class="item"
+            v-for="item in letters" :key="item"
+            @touchStart="handleTouchStart"
+            @handleTouchMove="handleTouchMove"
+            @handleTouchEnd="handleTouchEnd"
+            @click="handleletterClick"
+            :ref="item"
+        >{{item}}</li>
       </ul>
     </div>
 </template>
@@ -17,6 +24,52 @@
         name: "city-alphabet",
       props:{
         allCities: Object
+      },
+      computed: {
+        letters () {
+          const letters = [];
+          for (let i in this.allCities) {
+            letters.push(i)
+          }
+          return letters;
+        }
+      },
+      data () {
+          return {
+            touchStatus: false,
+            startY: 0,
+            timer: null
+          }
+      },
+      updated () {
+        this.startY = this.$refs['A'][0].offsetTop
+      },
+      methods: {
+        handleletterClick (e) {
+          this.$emit('handleLetterChange',e.target.innerText)
+        },
+        //兄弟节点之间传值
+        handleTouchStart () {
+          this.touchStatus = true;
+        },
+        handleTouchMove (e) {
+          if (this.touchStatus) {
+            //timer的设置是为了减少handleTouchMove的执行
+            if(this.timer) {
+              clearTimeout(this.timer)
+            }
+            this.timer = setTimeout(() => {
+              const touchY = e.touches[0].clientY-79
+              const index = Math.floor((touchY - this.startY)/20)
+              if (index >= 0 && index < this.letters.length){
+                this.$emit('change',this.letters[index ])
+              }
+            },16)
+          }
+        },
+        handleTouchEnd () {
+          this.touchStatus = false;
+        }
       }
     }
 </script>

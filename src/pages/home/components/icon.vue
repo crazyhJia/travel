@@ -85,7 +85,7 @@
           pages (){
             const pages = []
             this.iconList.forEach((item, index) => {
-              const page = Math.floor(index/4)
+              const page = Math.floor(index/8)
               if(!pages[page]){
                 pages[page] = []
               }
@@ -100,9 +100,9 @@
 <style scoped lang="stylus">
   /*@import '~stylus/mixins.styl'*/
 .icons >>> .swiper-container
-  height: 0
+  /*height: 0*/
   margin:0px;
-  padding-bottom: 25%;
+  /*padding-bottom: 25%;*/
 .icons
   margin-top: .4rem
   .icon
