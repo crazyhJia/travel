@@ -6,13 +6,13 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
+import state from './state'
+import mutations from './mutations'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    city: '上海'
-  },
+  // state: state,
   //按官网文档  组件可以不用dispatch到actions 可以直接到mutations
   // actions: {
   //   //ctx 上下文参数
@@ -21,9 +21,9 @@ export default new Vuex.Store({
   //     ctx.commit('changeCity',value)
   //   }
   // },
-  mutations: {
-    changeCity (state,value){
-      state.city = value;
-    }
-  }
+  // mutations: mutations
+
+  //简化
+  state,
+  mutations
 })

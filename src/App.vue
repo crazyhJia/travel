@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
-    <!--router-view 显示的是当前路由地址对应的内容,  指向route/index.js-->
-    <router-view/>
+    <keep-alive>
+      <!--router-view 显示的是当前路由地址对应的内容,  指向route/index.js-->
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 

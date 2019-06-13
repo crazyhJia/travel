@@ -3,7 +3,7 @@
       <span class="header-left"><Icon type="ios-arrow-back" /></span>
       <span class="header-input"><Icon type="ios-search-outline" />输入城市/景点/游玩主题</span>
       <router-link to='/city'>
-       <span class="header-right">{{this.$store.state.city}}<Icon type="md-arrow-dropdown" /></span>
+       <span class="header-right">{{this.city}}<Icon type="md-arrow-dropdown" /></span>
       </router-link>
     </div>
 </template>
@@ -15,9 +15,12 @@
      *@Copyright 天源迪科信息技术股份有限公司
      *@Description
      */
+    import { mapState } from 'vuex'
     export default {
         name: "home-header",
-
+        computed: {
+          ...mapState(['city'])
+        }
     }
 </script>
 
@@ -44,7 +47,7 @@
       text-align: left
       padding-left : .2rem
     .header-right
-      width: 2.64rem
+      min-width: 2.64rem
       float: right
       text-align: center
       margin-left: .3rem

@@ -5,7 +5,7 @@
           <div class="title">当前城市</div>
           <div class="button-list">
             <div class="button-wrapper">
-              <div class="button">{{this.$store.state.city}}</div>
+              <div class="button">{{this.currentCity}}</div>
             </div>
           </div>
         </div>
@@ -38,17 +38,24 @@
      *@Copyright 天源迪科信息技术股份有限公司
      *@Description
      */
-    // import BScroll from 'better-scroll'
+    // import BScroll  from 'better-scroll';
+    //vuex提供的简便方法
+    import { mapState, mapMutations } from 'vuex'
     export default {
         name: "city-list",
       // mounted () {
-      //     this.scroll = new Bscroll(this.$ref.wrapper)
-      // }
+      //     this.scroll = new BScroll(this.$refs.wrapper)
+      // },
       props: {
         city: String,
         hotCities:Array,
         allCities:Object
 
+      },
+      computed: {
+        ...mapState({
+          currentCity: 'city'
+        })
       },
       data () {
           return {
@@ -59,8 +66,13 @@
         handelCityClick (value) {
           //按官网文档  组件可以不用dispatch到actions 可以直接到mutations
           // this.$store.dispatch('changeCity',value)
-          this.$store.commit('changeCity',value)
-        }
+          // this.$store.commit('changeCity',value)
+          //这句是上一句和 ...mapMutations运用后的简写
+          this.changeCity(value )
+          this.$router.push('/')
+        },
+        ...mapMutations(['changeCity'])
+
       },
 
 
