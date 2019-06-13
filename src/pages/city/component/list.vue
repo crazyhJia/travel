@@ -5,21 +5,25 @@
           <div class="title">当前城市</div>
           <div class="button-list">
             <div class="button-wrapper">
-              <div class="button">{{this.city}}</div>
+              <div class="button">{{this.$store.state.city}}</div>
             </div>
           </div>
         </div>
         <div class="area">
           <div class="title">热门城市</div>
           <div class="button-list">
-            <div class="button-wrapper" v-for="hcity in hotCities" :key="hcity.id">
+            <div class="button-wrapper" v-for="hcity in hotCities"
+                 :key="hcity.id"
+                 @click="handelCityClick(hcity.name)"
+            >
               <div class="button">{{hcity.name}}</div>
             </div>
           </div>
         </div>
         <div class="area" v-for="city,key in allCities" :key="key">
           <div class="title">{{key}}</div>
-          <div class="item-list" v-for="item in city" :key="item.id" >
+          <div class="item-list" v-for="item in city"
+               :key="item.id" @click="handelCityClick(item.name)">
             <div class="item" >{{item.name}}</div>
           </div>
         </div>
@@ -50,7 +54,15 @@
           return {
 
           }
-      }
+      },
+      methods: {
+        handelCityClick (value) {
+          //按官网文档  组件可以不用dispatch到actions 可以直接到mutations
+          // this.$store.dispatch('changeCity',value)
+          this.$store.commit('changeCity',value)
+        }
+      },
+
 
     }
 </script>

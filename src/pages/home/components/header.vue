@@ -3,7 +3,7 @@
       <span class="header-left"><Icon type="ios-arrow-back" /></span>
       <span class="header-input"><Icon type="ios-search-outline" />输入城市/景点/游玩主题</span>
       <router-link to='/city'>
-       <span class="header-right">{{this.city}}<Icon type="md-arrow-dropdown" /></span>
+       <span class="header-right">{{this.$store.state.city}}<Icon type="md-arrow-dropdown" /></span>
       </router-link>
     </div>
 </template>
@@ -17,9 +17,7 @@
      */
     export default {
         name: "home-header",
-        props: {
-          city: String
-        }
+
     }
 </script>
 
