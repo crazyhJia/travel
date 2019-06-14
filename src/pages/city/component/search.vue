@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="search">
-      <input v-model="keyWord"  class="search-input" placeholder="输入城市或拼音"/>
+      <input v-model="keyWord" type="text" class="search-input" placeholder="输入城市或拼音"/>
     </div>
     <div class="search-content" ref="search" v-show="keyWord">
       <ul>
@@ -43,8 +43,8 @@
       }
     },
     wacth: {
-      keyWord (val) {
-        console.log(val)
+      keyWord () {
+        console.log()
         if (this.timer) {
           clearTimeout(this.timer)
         }

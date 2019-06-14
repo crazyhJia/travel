@@ -20,7 +20,9 @@
             </div>
           </div>
         </div>
-        <div class="area" v-for="city,key in allCities" :key="key">
+        <div class="area" v-for="city,key in allCities"
+             :key="key" ref="key"
+        >
           <div class="title">{{key}}</div>
           <div class="item-list" v-for="item in city"
                :key="item.id" @click="handelCityClick(item.name)">
@@ -39,7 +41,7 @@
      *@Description
      */
     import BScroll from 'better-scroll';
-    import axios from 'axios'
+    // import axios from 'axios'
     //vuex提供的简便方法
     import { mapState, mapMutations } from 'vuex'
     export default {
@@ -52,7 +54,6 @@
         hotCities:Array,
         allCities:Object,
         letter: String
-
       },
       computed: {
         ...mapState({
@@ -61,23 +62,19 @@
       },
       data () {
           return {
-
           }
       },
       watch: {
-      letter () {
-        if (this.letter) {
-          const element = this.$refs[this.letter][0]
-          console.log(element);
-          this.scroll.scrollToElement(element)
+        letter () {
+          if (this.letter) {
+            const element = this.$refs[this.letter][0]
+            console.log(element);
+            this.scroll.scrollToElement(element)
+          }
         }
-      }
-    },
+      },
       methods: {
         handelCityClick (value) {
-          debugger
-
-          console.log("handelCityClick")
           //按官网文档  组件可以不用dispatch到actions 可以直接到mutations
           // this.$store.dispatch('changeCity',value)
           // this.$store.commit('changeCity',value)
@@ -90,7 +87,6 @@
       mounted () {
         this.scroll = new BScroll(this.$refs.wrapper)
       }
-
     }
 </script>
 

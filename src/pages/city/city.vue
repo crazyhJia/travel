@@ -2,7 +2,7 @@
     <div class="city">
       <div class="fixedTemplate">
         <city-header></city-header>
-        <city-search :allCities="allCities"></city-search>
+        <city-search ></city-search>
       </div>
       <city-list :city='city' :hotCities="hotCities" :allCities="allCities"
         :letter="letter"
