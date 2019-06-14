@@ -15,10 +15,11 @@
      *@Copyright 天源迪科信息技术股份有限公司
      *@Description
      */
+    import { mapState } from 'vuex'
     export default {
         name: "home-header",
-        props: {
-          city: String
+        computed: {
+          ...mapState(['city'])
         }
     }
 </script>
@@ -46,7 +47,7 @@
       text-align: left
       padding-left : .2rem
     .header-right
-      width: 2.64rem
+      min-width: 2.64rem
       float: right
       text-align: center
       margin-left: .3rem

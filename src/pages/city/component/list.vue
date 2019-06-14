@@ -5,23 +5,25 @@
           <div class="title">当前城市</div>
           <div class="button-list">
             <div class="button-wrapper">
-              <div class="button">{{this.city}}</div>
+              <div class="button">{{this.currentCity}}</div>
             </div>
           </div>
         </div>
         <div class="area">
           <div class="title">热门城市</div>
           <div class="button-list">
-            <div class="button-wrapper" v-for="hcity in hotCities" :key="hcity.id">
+            <div class="button-wrapper" v-for="hcity in hotCities"
+                 :key="hcity.id"
+                 @click="handelCityClick(hcity.name)"
+            >
               <div class="button">{{hcity.name}}</div>
             </div>
           </div>
         </div>
-        <div class="area" v-for="city,key in allCities"
-             :key="key" :ref="key"
-        >
+        <div class="area" v-for="city,key in allCities" :key="key">
           <div class="title">{{key}}</div>
-          <div class="item-list" v-for="item in city" :key="item.id" >
+          <div class="item-list" v-for="item in city"
+               :key="item.id" @click="handelCityClick(item.name)">
             <div class="item" >{{item.name}}</div>
           </div>
         </div>
@@ -38,30 +40,55 @@
      */
     import BScroll from 'better-scroll';
     import axios from 'axios'
+    //vuex提供的简便方法
+    import { mapState, mapMutations } from 'vuex'
     export default {
         name: "city-list",
+      mounted () {
+          this.scroll = new BScroll(this.$refs.wrapper)
+      },
       props: {
         city: String,
         hotCities:Array,
         allCities:Object,
         letter: String
+
+      },
+      computed: {
+        ...mapState({
+          currentCity: 'city'
+        })
       },
       data () {
           return {
 
           }
       },
+    watch: {
+      letter () {
+        if (this.letter) {
+          const element = this.$refs[this.letter][0]
+          console.log(element);
+          this.scroll.scrollToElement(element)
+        }
+      }
+    },
+      methods: {
+        handelCityClick (value) {
+          //按官网文档  组件可以不用dispatch到actions 可以直接到mutations
+          // this.$store.dispatch('changeCity',value)
+          // this.$store.commit('changeCity',value)
+          //这句是上一句和 ...mapMutations运用后的简写
+          this.changeCity(value )
+          this.$router.push('/')
+        },
+        ...mapMutations(['changeCity'])
+
+      },
+
+      },
       mounted () {
         this.scroll = new BScroll(this.$refs.wrapper)
-      },
-      watch: {
-        letter () {
-          if (this.letter) {
-            const element = this.$refs[this.letter][0]
-            console.log(element);
-            this.scroll.scrollToElement(element)
-          }
-        }
       }
 
     }

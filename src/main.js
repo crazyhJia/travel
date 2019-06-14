@@ -7,6 +7,7 @@ import 'iview/dist/styles/iview.css'
 import router from './router'
 import './assets/styles/reset.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store'
 import 'swiper/dist/css/swiper.css'
 
 Vue.use(iView)
@@ -17,6 +18,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app', // 这个指向index.html的app
   router,
+  store,
   components: { App },  //这个指向App.vue或者App.js  或者App.json等
   template: '<App/>'
 })
