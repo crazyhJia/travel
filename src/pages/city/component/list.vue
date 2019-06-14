@@ -64,7 +64,7 @@
 
           }
       },
-    watch: {
+      watch: {
       letter () {
         if (this.letter) {
           const element = this.$refs[this.letter][0]
@@ -75,6 +75,9 @@
     },
       methods: {
         handelCityClick (value) {
+          debugger
+
+          console.log("handelCityClick")
           //按官网文档  组件可以不用dispatch到actions 可以直接到mutations
           // this.$store.dispatch('changeCity',value)
           // this.$store.commit('changeCity',value)
@@ -83,9 +86,6 @@
           this.$router.push('/')
         },
         ...mapMutations(['changeCity'])
-
-      },
-
       },
       mounted () {
         this.scroll = new BScroll(this.$refs.wrapper)
