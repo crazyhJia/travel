@@ -58,6 +58,10 @@
       },
       activated () {
           window.addEventListener("scroll",this.handleScroll)
+      },
+      deactivated () {
+        // 在组件切换到另一个页面时执行该钩子函数  window是个全局事件
+        window.removeEventListener("scroll",this.handleScroll)
       }
     }
 </script>
