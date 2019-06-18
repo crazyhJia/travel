@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <!--exclude="detail"   意味着detail页面并不被缓存-->
+    <keep-alive exclude="detail">
       <!--router-view 显示的是当前路由地址对应的内容,  指向route/index.js-->
       <router-view/>
     </keep-alive>

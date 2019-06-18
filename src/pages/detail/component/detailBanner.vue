@@ -1,22 +1,24 @@
 <template>
-  <dv>
+  <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="https://imgs.qunarzz.com/p/tts5/1502/dc/ca8be7f07061e5.jpg_r_390x260x90_d664e735.jpg"/>
+      <img class="banner-img" :src="bannerImg"/>
       <div class="banner-info">
         <div class="banner-title" style="display: inline-block">
-          大连圣亚海洋世界（AAAA景区）
+          {{sightName}}
         </div>
         <div class="banner-number" style="display: inline-block">
           <Icon class="banner-icon" type="ios-image" />
-          39
+          {{this.gallaryImgs.length}}
         </div>
       </div>
     </div>
-    <gallary :imgs="imgs"
-             v-show="showGallary"
-             @closeBanner="handleCloseGallary"
-    ></gallary>
-  </dv>
+    <fade-animation>
+      <gallary :imgs="gallaryImgs"
+               v-show="showGallary"
+               @closeBanner="handleCloseGallary"
+      ></gallary>
+    </fade-animation>
+  </div>
 </template>
 
 <script>
@@ -27,10 +29,17 @@
      *@Description
      */
     import Gallary from '../../../components/gallary/gallary'
+    import FadeAnimation from '../../../components/fade/fade'
     export default {
         name: "detailBanner",
       components: {
-        Gallary
+        Gallary,
+        FadeAnimation
+      },
+      props: {
+        sightName: String,
+        bannerImg: String,
+        gallaryImgs: Array
       },
       data () {
           return {
