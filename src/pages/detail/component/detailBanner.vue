@@ -12,10 +12,12 @@
         </div>
       </div>
     </div>
-    <gallary :imgs="gallaryImgs"
-             v-show="showGallary"
-             @closeBanner="handleCloseGallary"
-    ></gallary>
+    <fade-animation>
+      <gallary :imgs="gallaryImgs"
+               v-show="showGallary"
+               @closeBanner="handleCloseGallary"
+      ></gallary>
+    </fade-animation>
   </div>
 </template>
 
@@ -27,10 +29,12 @@
      *@Description
      */
     import Gallary from '../../../components/gallary/gallary'
+    import FadeAnimation from '../../../components/fade/fade'
     export default {
         name: "detailBanner",
       components: {
-        Gallary
+        Gallary,
+        FadeAnimation
       },
       props: {
         sightName: String,
