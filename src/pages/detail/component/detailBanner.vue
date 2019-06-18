@@ -1,5 +1,5 @@
 <template>
-  <dv>
+  <div>
     <div class="banner" @click="handleBannerClick">
       <img class="banner-img" src="https://imgs.qunarzz.com/p/tts5/1502/dc/ca8be7f07061e5.jpg_r_390x260x90_d664e735.jpg"/>
       <div class="banner-info">
@@ -16,7 +16,7 @@
              v-show="showGallary"
              @closeBanner="handleCloseGallary"
     ></gallary>
-  </dv>
+  </div>
 </template>
 
 <script>
