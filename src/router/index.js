@@ -15,16 +15,28 @@ export default new Router({
       name: 'home',
       component: Home
     },
+    // {
+    //   path: '/city',
+    //   name: 'city',
+    //   component: City
+    // },
+    // {
+    //   path: '/detail',
+    //   // path: '/detail/:id',
+    //   name: 'detail',
+    //   component: Detail
+    // },
     {
       path: '/city',
       name: 'city',
-      component: City
+      component: () => import('@/pages/city/city')
     },
     {
       path: '/detail',
       // path: '/detail/:id',
       name: 'detail',
-      component: Detail
+      //异步加载组件方式   用于app.js文件有几mb大时，项目文件过大时，拆分代码
+      component: () => import('@/pages/detail/detail')
     },
   ],
   scrollBehavior (to, from, savedPosition) {
