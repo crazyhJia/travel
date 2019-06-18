@@ -81,6 +81,7 @@
       color: #fff
       font-size: 30px
   .header-fixed
+    z-index: 2
     position :fixed
     top: 0
     left: 0
